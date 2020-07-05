@@ -1,0 +1,11 @@
+[gd_resource type="Environment" format=2]
+
+[resource]
+background_mode = 4
+background_canvas_max_layer = 1
+ambient_light_color = Color( 0.960784, 0.960784, 0.960784, 1 )
+glow_enabled = true
+glow_intensity = 0.35
+glow_bloom = 0.5
+glow_blend_mode = 1
+glow_hdr_threshold = 0.52

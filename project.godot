@@ -1,0 +1,44 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Panel",
+"class": "MonitorPlotPanel",
+"language": "GDScript",
+"path": "res://PerfMonitor/MonitorPlotPanel.gd"
+} ]
+_global_script_class_icons={
+"MonitorPlotPanel": ""
+}
+
+[application]
+
+config/name="Pruebas 2"
+run/main_scene="res://CameraScroll.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=960
+window/size/test_height=540
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_environment="res://default_env.tres"

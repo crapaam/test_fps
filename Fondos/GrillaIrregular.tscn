@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Fondos/GrillaIrregular.gd" type="Script" id=1]
+
+[node name="Grilla" type="Node2D"]
+light_mask = 2
+script = ExtResource( 1 )
+color_lineas = Color( 0.713726, 0.0431373, 0.984314, 1 )

@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://3d.gd" type="Script" id=1]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 20, 20 )
+
+[sub_resource type="ProceduralSky" id=3]
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 3 )
+background_energy = 0.2
+tonemap_mode = 2
+
+[node name="3d" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, 5, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 5, 10 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45726, 4.37932, -3.22792 )
+shadow_enabled = true
+omni_range = 17.2581
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.731924, -0.347344, 0.586208, 0, 0.860317, 0.50976, -0.681387, 0.373106, -0.629686, 7.7239, 9.75158, -8.26382 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+transform = Transform( 0.727102, 0.686529, 0, -0.686529, 0.727102, 0, 0, 0, 1, -0.637253, 0, 0 )
+operation = 1
+
+[node name="CSGTorus" type="CSGTorus" parent="CSGCombiner"]
+transform = Transform( 1, -1.49012e-08, 2.98023e-08, 0, 0.344807, 0.938674, 0, -0.938674, 0.344807, -0.463338, 0.847968, 0.718175 )
+operation = 1
+sides = 20
+ring_sides = 10
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.854368, -1.12577, 0 )
+operation = 1
+width = 8.03259
+height = 3.71592
+
+[node name="CSGCombiner2" type="CSGCombiner" parent="."]
+transform = Transform( -0.503187, -0.756354, -0.41801, 0.832583, -0.5539, 0, -0.231536, -0.348028, 0.908442, 0.0125632, 2.42831, 0 )
+operation = 1
+
+[node name="CSGTorus" type="CSGTorus" parent="CSGCombiner2"]
+transform = Transform( 1, 5.96046e-08, 1.03842e-07, -1.71363e-07, 0.344807, 0.938673, 1.49012e-08, -0.938673, 0.344807, -0.392731, 0.340494, -0.77383 )
+operation = 1
+sides = 20
+ring_sides = 10
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner2"]
+transform = Transform( 1, 1.11759e-07, 4.47035e-08, -1.71363e-07, 1, -8.9407e-08, 1.49012e-08, -2.98023e-08, 1, -0.783763, -1.63324, -1.49201 )
+operation = 1
+width = 8.03259
+height = 3.71592
+
+[node name="Tween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true
+
+[node name="Tween2" type="Tween" parent="."]
+repeat = true
+playback/repeat = true
